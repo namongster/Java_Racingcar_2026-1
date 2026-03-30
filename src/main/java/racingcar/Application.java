@@ -21,6 +21,15 @@ public class Application {
                 throw new IllegalArgumentException();
             }
         }
+        //게임 횟수 입력
+        System.out.print("게임 횟수를 입력하세요 : ");
+        int game = Integer.parseInt(Console.readLine());
+        //횟수 예외처리
+        if (game <1){
+            throw new IllegalArgumentException();
+        }
+
+
 
 
 
