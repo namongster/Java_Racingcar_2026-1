@@ -1,8 +1,15 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Console;
-
+import camp.nextstep.edu.missionutils.*;
+import java.util.Arrays;
 public class Application {
+
+    public void forward(String[] cars){
+        for (int i =0;i < cars.length; i++){
+
+        }
+    }
+
     public static void main(String[] args) {
 
         //플레이어 자동차 이름 입력받기
@@ -29,7 +36,20 @@ public class Application {
             throw new IllegalArgumentException();
         }
 
+        //경주 게임 출력
 
+        String[] race = new String[cars.length];
+        Arrays.fill(race,"");
+        for(int i =0;i<game;i++){
+            for (int j = 0; j < cars.length; j++) {
+                int num = Randoms.pickNumberInRange(0, 9);
+                System.out.print(cars[j] + " : ");
+                if (num >= 4) {race[j] += "-";System.out.println(race[j]);}
+                else System.out.println(race[j]);
+
+            }
+            System.out.println("\n");
+        }
 
 
 
