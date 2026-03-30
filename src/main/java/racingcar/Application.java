@@ -40,17 +40,37 @@ public class Application {
 
         String[] race = new String[cars.length];
         Arrays.fill(race,"");
+        int[] count = new int[cars.length];
         for(int i =0;i<game;i++){
             for (int j = 0; j < cars.length; j++) {
                 int num = Randoms.pickNumberInRange(0, 9);
                 System.out.print(cars[j] + " : ");
-                if (num >= 4) {race[j] += "-";System.out.println(race[j]);}
+                if (num >= 4) {race[j] += "-";System.out.println(race[j]);count[j]++;}
                 else System.out.println(race[j]);
 
             }
-            System.out.println("\n");
+            System.out.println();
         }
 
+        //우승자 출력
+        System.out.print("최종 우승자 : ");
+        int s = cars.length;
+        for (int i = 0 ; i < s ; i++){
+
+            for (int j = 0; j < s; j++){
+                if (j == i)continue;
+                if ( count[j] > count[i]){
+                    System.out.print(cars[j]);
+                    break;
+                }
+                else if(count[j] == count[i]){
+                    System.out.print(cars[j]+","+cars[i]);
+                    break;
+                }
+
+
+            }
+        }
 
 
 
